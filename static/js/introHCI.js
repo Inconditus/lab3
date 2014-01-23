@@ -13,9 +13,9 @@ function initializePage() {
       $('.jumbotron h1').text("Tomato tomato");
       $('#testjs').text("Swag?");
       $(".jumbotron p").addClass("active");
-      $("#submitBtn").click(updateProject);
       });
 
+  $("#submitBtn").click(updateProject);
   // Add any additional listeners here
   // example: $("#div-id").click(functionToCall);
   $("a.thumbnail").click(projectClick);
@@ -39,7 +39,11 @@ function projectClick(e) {
 }
 function updateProject(e) {
   var projectID = $('#project').val();
+  console.log(projectID);
   $(projectID).animate({
+    width: $('#width').val()
+  });
+  $(projectID + " img").animate({
     width: $('#width').val()
   });
 
